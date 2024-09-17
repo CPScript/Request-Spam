@@ -1,5 +1,5 @@
 # Request-Spam
-Easily flood a Grabify tracker or link with real-looking requests to throw off an attacker and make it harder for them to track you!
+Easily flood a Ip-tracker or URL with real-looking requests to throw off an attacker and make it harder for them to track you!
 
 ---
 
