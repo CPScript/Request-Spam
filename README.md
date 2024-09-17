@@ -29,5 +29,7 @@ Easily flood a Ip-tracker or URL with real-looking requests to throw off an atta
 
 
 > Note: This script is for educational purposes only. Use responsibly and do not use to harm or track others without their consent.
+
 > Author: CPScript
+
 > License: MIT License (see LICENSE file for details)
