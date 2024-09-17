@@ -15,12 +15,16 @@ Easily flood a Ip-tracker or URL with real-looking requests to throw off an atta
 * Handles errors and retries if necessary
 
 ## Requirements:
-* Python 3.x
+* GIT (must clone the repo)
+* Python 3.x (language)
 `requests` library (install with `pip install requests`)
 
 ## Usage:
-* Save this script as anti_grabify.py
-* Run the script with python anti_grabify.py
+* Install the `python` programming language
+* Install `git` - `pkg install git` or `apt install git`, if these dont work try to install it using python `pip install git`
+* Clone this repo - `git clone https://github.com/CPScript/Request-Spam`
+* Get into the repo's folder - `cd Request-Spam` or if you saved it somewhere type `cd <dir where its stored>/Request-Spam`
+* Execute the script - `python spam.py`
 * Follow the prompts to enter the link, number of requests, and time delay
 
 
