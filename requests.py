@@ -5,7 +5,7 @@ import os
 from os import system
 import platform 
 
-def clear(): # clear function for clearing the terminal if you reuse the tool or after you install dependacys, for a nice sleek design
+def clear(): 
     system = platform.system().lower()
 
     if system == 'windows':
@@ -17,22 +17,20 @@ def clear(): # clear function for clearing the terminal if you reuse the tool or
     else:
         print(f"{system} Is an Unsupported platform, skipping")
 
-# Call
 print("Checking if Your Platform is Supported!")
 print(f"You are using '{system}'")
-clear() # clear
+clear() 
 
 def main():
 
-    # banner
     print("""
-=======> Anti-Grabify <========
+=======> Request-Flood <========
 Description:
-Easily flood a Grabify tracker
-or link with real looking requests
+Easily flood a IP-tracker
+or URL with real looking requests
 to throw off an attacker and make
-it harder or them to track you!
-(undetectable bot)
+it harder or them to track your 
+original host ip. (undetectable bot)
 
 How to use:
 1. Type the link
@@ -45,14 +43,12 @@ How to use:
 (Recommended to use '0.5', anything below will get blocked)
 =======> By: CPScript <========
 
-┌─[Anti-Grabify] - [User-Input]""")
+┌─[Request-Flood] - [User-Input]""")
 
-    # user input
     grabify_link = input("|─[link]──> ")
     num_requests = int(input("|─[requests]──> "))
     delay_between_requests = float(input("└─[delay]──> "))
 
-    # user agents
     user_agents = [
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
@@ -64,7 +60,6 @@ How to use:
         "Mozilla/5.0 (Android 11; Mobile; LG-M255) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Mobile Safari/537.36"
     ]
 
-    # IP addresses | This can be changes to the users liking
     ip_addresses = [
         "24.48.128.53",
         "50.116.1.121",
@@ -84,31 +79,26 @@ How to use:
         "1.1.1.1",
         "2.2.2.2",
         "3.3.3.3",
+        "10.10.10.10",
     ]
 
-    # rotate IP addresses and user agents
     def rotate_ip_and_ua():
         ip_address = random.choice(ip_addresses)
         user_agent = random.choice(user_agents)
         return ip_address, user_agent
 
     for i in range(num_requests):
-        # Rotate through IP addresses and user agents
         ip_address, user_agent = rotate_ip_and_ua()
-        # Set headers
         headers = {
             "User-Agent": user_agent,
             "X-Forwarded-For": ip_address
         }
-        # Send request(s)
         try:
             response = requests.get(grabify_link, headers=headers)
             print(f"Request '{i+1}': User-Agent '{user_agent}' and from '{ip_address}'")
-            # delay
             time.sleep(delay_between_requests)
         except requests.exceptions.RequestException as e:
             print(f"Error message: {e}")
-            # Wait before retrying if error
             time.sleep(delay_between_requests)
             continue
 
